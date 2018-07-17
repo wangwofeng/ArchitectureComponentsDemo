@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aacdemo">
+
+    <application
+        android:allowBackup="true"
+        android:name=".MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".lifecycle.LocationActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".lifecycle.LocationActivity2"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".lifecycle.LifecycleLocationActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".viewmodel.UserInfoActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".viewmodel.UserInfoViewModelActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".livedata.CarInfoActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".livedata.CarSpeedActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".livedata.LiveDataCarInfoActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".livedata.LiveDataCarSpeedActivity"
+            android:label="@string/title_activity_location"/>
+        <activity
+            android:name=".room.UserManagerActivity"
+            android:label="@string/title_activity_location"/>
+    </application>
+
+</manifest>
