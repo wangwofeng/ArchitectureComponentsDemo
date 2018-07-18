@@ -68,7 +68,7 @@ public class UserManagerActivity extends FragmentActivity implements LifecycleOw
             int id=Integer.valueOf(id_editText.getText().toString());
             bean.setId(id);
             bean.setName(name_editText.getText().toString());
-            bean.setScore(50);
+            bean.setScore((int) (Math.random()*100));
             AppDatabase.DB.getUserDao().save(bean);
         }
     }
