@@ -22,18 +22,17 @@ public class LiveDataCarSpeedActivity extends Activity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speed);
+        setContentView(R.layout.activity_speed_livedata);
         lifecycleRegistry=new LifecycleRegistry(this);
         initViews();
         String id = getIntent().getStringExtra("id");
         CarSpeedLiveData.get(id).observe(this, new Observer<CarSpeedBean>(){
             @Override
             public void onChanged(@Nullable CarSpeedBean bean) {
-                Log.i("LiveDataCarSpeedAct","@@ onChanged");
+                Log.i("LiveDataCarSpeedAct","@@ onChanged --------------------");
                 speed_textView.setText("车速:"+bean.getSpeed()+" Km/h");
             }
         });
-//        CarSpeedLiveData.get(id).startCheck();
     }
     private void initViews(){
         speed_textView = findViewById(R.id.speed_textView);

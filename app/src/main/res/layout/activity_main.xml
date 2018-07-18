@@ -55,32 +55,6 @@
                 android:textColor="#339900"
                 android:text="使用Lifecycle处理位置信息，避免内存泄漏或崩溃"/>
             <Button
-                android:id="@+id/userInfo_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textAllCaps="false"
-                android:text="ViewModel演示-获取用户信息"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textColor="#339900"
-                android:text="模拟通过网络加载用户信息，旋转屏幕会重新调用接口"/>
-            <Button
-                android:id="@+id/userInfoViewModel_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textAllCaps="false"
-                android:text="ViewModel演示-获取用户信息（ViewModel）"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textColor="#339900"
-                android:text="使用ViewModel处理用户信息数据，旋转屏幕时重用"/>
-            <Button
                 android:id="@+id/carInfo_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,6 +80,32 @@
                 android:textSize="14dp"
                 android:textColor="#339900"
                 android:text="模拟两个Activity分享用一个数据，且在数据发生更改时通知到所有观察者"/>
+            <Button
+                android:id="@+id/userInfo_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAllCaps="false"
+                android:text="ViewModel演示-获取用户信息"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#339900"
+                android:text="模拟通过网络加载用户信息，旋转屏幕会重新调用接口"/>
+            <Button
+                android:id="@+id/userInfoViewModel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAllCaps="false"
+                android:text="ViewModel演示-获取用户信息（ViewModel）"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#339900"
+                android:text="使用ViewModel处理用户信息数据，旋转屏幕时重用"/>
             <Button
                 android:id="@+id/room_button"
                 android:layout_width="wrap_content"
