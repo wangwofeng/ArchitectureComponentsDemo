@@ -22,7 +22,7 @@ public class MyLivecycleLocationListener implements LifecycleObserver {
     private Lifecycle lifecycle;
     private final String[] cities={"北京","上海","广州","郑州","沈阳","大连","成都","重庆"};
     public MyLivecycleLocationListener(Context context, Lifecycle lifecycle, LocationCallback callback) {
-        this.timer = new Timer();
+
         this.callback = callback;
         this.lifecycle = lifecycle;
     }
@@ -31,23 +31,26 @@ public class MyLivecycleLocationListener implements LifecycleObserver {
     public void start() {
         Log.i("MyLivecycleLocListener", "【start】");
         //这里需要等待5秒钟才能开始获取地址
+        timer = new Timer();
         startTimer = new Timer();
         startTimer.schedule(new TimerTask() {
             @Override
-            public void run() {timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    if (lifecycle.getCurrentState().isAtLeast(STARTED)) {
-                        int index = (int) (Math.random() * cities.length);
-                        Log.i("MyLivecycleLocListener", "timer.schedule location->" + cities[index]);
-                        LocationBean locationBean = new LocationBean();
-                        locationBean.setLocation(cities[index]);
-                        callback.onReceiveLocation(locationBean);
-                    }else{
-                        Log.i("MyLivecycleLocListener", "timer.schedule 因状态异常不能启动");
+            public void run() {
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (lifecycle.getCurrentState().isAtLeast(STARTED)) {
+                            //模拟延时任务
+                            int index = (int) (Math.random() * cities.length);
+                            Log.i("MyLivecycleLocListener", "timer.schedule location->" + cities[index]);
+                            LocationBean locationBean = new LocationBean();
+                            locationBean.setLocation(cities[index]);
+                            callback.onReceiveLocation(locationBean);
+                        }else{
+                            Log.i("MyLivecycleLocListener", "timer.schedule 因状态异常不能启动");
+                        }
                     }
-                }
-            },1000, 3000);
+                },1000, 3000);
             }
         },5000);
 

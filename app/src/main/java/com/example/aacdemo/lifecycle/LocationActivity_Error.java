@@ -11,7 +11,7 @@ import com.example.aacdemo.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class LocationActivity2 extends Activity {
+public class LocationActivity_Error extends Activity {
     private TextView currCity_textView;
     private MyLocationListener listener;
     @Override

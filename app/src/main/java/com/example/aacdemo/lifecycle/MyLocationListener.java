@@ -21,16 +21,20 @@ public class MyLocationListener {
 
     public void start() {
         Log.i("MyLocationListener", "【start】");
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                int index = (int) (Math.random()*cities.length);
-                Log.i("MyLocationListener", "timer.schedule location->"+cities[index]);
-                LocationBean locationBean = new LocationBean();
-                locationBean.setLocation(cities[index]);
-                callback.onReceiveLocation(locationBean);
-            }
-        },1000, 3000);
+        try {
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    int index = (int) (Math.random()*cities.length);
+                    Log.i("MyLocationListener", "timer.schedule location->"+cities[index]);
+                    LocationBean locationBean = new LocationBean();
+                    locationBean.setLocation(cities[index]);
+                    callback.onReceiveLocation(locationBean);
+                }
+            },1000, 3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void stop() {

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import com.example.aacdemo.lifecycle.LifecycleLocationActivity;
 import com.example.aacdemo.lifecycle.LocationActivity;
-import com.example.aacdemo.lifecycle.LocationActivity2;
+import com.example.aacdemo.lifecycle.LocationActivity_Error;
 import com.example.aacdemo.livedata.CarInfoActivity;
 import com.example.aacdemo.livedata.LiveDataCarInfoActivity;
 import com.example.aacdemo.room.UserManagerActivity;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }else if(v==location2_button){
             //处理生命周期：延时启动获取位置功能
-            Intent intent = new Intent(this, LocationActivity2.class);
+            Intent intent = new Intent(this, LocationActivity_Error.class);
             startActivity(intent);
         }else if(v==locationLivecycle_button){
             //处理生命周期：使用Lifecycle处理

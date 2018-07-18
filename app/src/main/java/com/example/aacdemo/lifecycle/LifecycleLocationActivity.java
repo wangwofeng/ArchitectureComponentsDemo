@@ -1,5 +1,6 @@
 package com.example.aacdemo.lifecycle;
 
+import android.app.Activity;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LifecycleRegistry;
@@ -7,21 +8,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.aacdemo.R;
 
-public class LifecycleLocationActivity extends AppCompatActivity implements LifecycleOwner{
+public class LifecycleLocationActivity extends Activity implements LifecycleOwner{
     private TextView currCity_textView;
     private MyLivecycleLocationListener listener;
-    private LifecycleRegistry lifecycleRegistry;
+    private LifecycleRegistry lifecycleRegistry;    //可以直接使用父类的lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
         lifecycleRegistry = new LifecycleRegistry(this);
-//        lifecycleRegistry.markState(Lifecycle.State.CREATED);
         initViews();
         listener = new MyLivecycleLocationListener(this, getLifecycle(), new LocationCallback() {
             @Override
@@ -43,10 +42,6 @@ public class LifecycleLocationActivity extends AppCompatActivity implements Life
         //***将等待5秒钟才能开始获取地址的代码移动到listener
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {

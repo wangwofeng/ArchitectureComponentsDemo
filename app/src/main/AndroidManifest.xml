@@ -21,7 +21,7 @@
             android:name=".lifecycle.LocationActivity"
             android:label="@string/title_activity_location"/>
         <activity
-            android:name=".lifecycle.LocationActivity2"
+            android:name=".lifecycle.LocationActivity_Error"
             android:label="@string/title_activity_location"/>
         <activity
             android:name=".lifecycle.LifecycleLocationActivity"
