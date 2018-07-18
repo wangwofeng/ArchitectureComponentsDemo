@@ -29,9 +29,9 @@ public class HttpSender {
                 UserInfoBean bean = new UserInfoBean();
                 bean.setAddr("北京市海淀区");
                 bean.setName("霍金");
-                bean.setScore(100);
+                bean.setScore((int) (Math.random()*100));
                 bean.setUserId(id);
-                Log.i("HttpSender","获取成功 ["+bean.getName()+"]");
+                Log.i("HttpSender","获取成功 ["+bean.getName()+"]["+bean.getScore()+"分]");
                 callback.onSuccess(bean);
             }
         },1000);

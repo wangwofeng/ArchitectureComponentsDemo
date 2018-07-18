@@ -15,6 +15,7 @@ import android.util.Log;
 
 public class UserInfoViewModel extends ViewModel {
     private MutableLiveData<UserInfoBean> user;
+    private MutableLiveData<Integer> progress;
     /* 转换LiveData中的值（Transform LiveData）
      * 这里的变换是指在LiveData的数据被分发到各个组件之前转换值的内容，
      * 各个组件收到的是转换后的值，但是LiveData里面数据本身的值并没有改变。
@@ -26,6 +27,12 @@ public class UserInfoViewModel extends ViewModel {
             loadUser();
         }
         return user;
+    }
+    public LiveData<Integer> getProgress(){
+        if(progress==null){
+            progress=new MutableLiveData<>();
+        }
+        return progress;
     }
     public LiveData<String> getUserNameLiveData(){
         if(user==null){
@@ -42,16 +49,13 @@ public class UserInfoViewModel extends ViewModel {
         return userNameLiveData;
     }
 
-    private void loadUser() {
+    public void loadUser() {
         Log.i("UserInfoViewModel","## loadUser");
         HttpSender.send("222", new GetUserInfoCallback() {
             @Override
             public void onSuccess(UserInfoBean bean) {
                 Log.i("UserInfoViewModel","loadUser onSuccess");
-//                Message msg=handler.obtainMessage(0, bean);
-//                handler.sendMessage(msg);
-//                user.setValue(bean);
-                user.postValue(bean);
+                ((MutableLiveData<UserInfoBean>)getUser()).postValue(bean);
             }
 
             @Override
@@ -62,6 +66,7 @@ public class UserInfoViewModel extends ViewModel {
 
             @Override
             public void onLoading(int p) {
+                ((MutableLiveData<Integer>)getProgress()).postValue(p);
             }
         });
     }

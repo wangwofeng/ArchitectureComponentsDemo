@@ -10,9 +10,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textColor="@android:color/black"
-        android:text="用户信息"/>
+        android:text="fragment - 用户信息"/>
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
@@ -59,30 +59,4 @@
         android:textSize="15dp"
         android:textColor="@android:color/black"
         android:hint="分数"/>
-    <View android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2">
-        <fragment
-            android:id="@+id/fragment1"
-            class="com.example.aacdemo.viewmodel.UserInfoFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <View android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/background_dark"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"/>
-        <fragment
-            android:id="@+id/fragment2"
-            class="com.example.aacdemo.viewmodel.UserInfoFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-    </LinearLayout>
 </LinearLayout>

@@ -69,7 +69,7 @@
         android:weightSum="2">
         <fragment
             android:id="@+id/fragment1"
-            class="com.example.aacdemo.viewmodel.UserInfoFragment"
+            class="com.example.aacdemo.viewmodel.UserInfoViewModelFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
@@ -80,7 +80,7 @@
             android:layout_marginBottom="1dp"/>
         <fragment
             android:id="@+id/fragment2"
-            class="com.example.aacdemo.viewmodel.UserInfoFragment"
+            class="com.example.aacdemo.viewmodel.UserInfoViewModelFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
